@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:80"
   swapica:
-    image:
+    image: slandyman/swapica
     restart: unless-stopped
     environment:
       - KV_VIPER_FILE=/config.yaml

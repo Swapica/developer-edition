@@ -1,0 +1,58 @@
+log:
+  level: debug
+  disable_sentry: true
+
+listener:
+  addr: :80
+
+data:
+  chains:
+    - id: "chapel"
+      name: "BSC Testnet"
+      icon: "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=64&q=75"
+      type: "evm"
+      swap_contract: "0x338662C6e113aD9CfA4E2e755931643D8Cf1884B" # address of swap contract
+      rpc_endpoint: "https://data-seed-prebsc-1-s1.binance.org:8545" # network rpc
+      confirmations: 12
+      chain_params:
+        chain_id: 97
+        native_symbol: "BNB"
+        native_decimals: 18
+        rpc: "https://data-seed-prebsc-1-s1.binance.org:8545"
+        explorer_url: "https://explorer.binance.org/smart-testnet"
+        chain_hex_id: "0x5"
+    - id: "goerli"
+      name: "Ethereum Goerli"
+      icon: "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=64&q=75"
+      type: "evm"
+      swap_contract: "0xfd3ba43065d02137ad7E585945F28063EF9C8CaF" # address of swap contract
+      rpc_endpoint: "https://goerli.infura.io/v3/67e22c92921e42839c983fbdecf33525" # network rpc
+      confirmations: 12
+      chain_params:
+        chain_id: 5
+        native_symbol: "ETH"
+        native_decimals: 18
+        rpc: "https://goerli.infura.io/v3/67e22c92921e42839c983fbdecf33525"
+        explorer_url: "https://goerli.etherscan.io/"
+        chain_hex_id: "0x5"
+    - id: "q-testnet"
+      name: "Q testnet"
+      icon: "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=64&q=75"
+      type: "evm"
+      swap_contract: "0x772B79f6CC9A6cD0E8211756B8722B40268c2AA7"
+      rpc_endpoint: "https://rpc.qtestnet.org"
+      confirmations: 12
+      chain_params:
+        chain_id: 35443
+        native_symbol: "Q"
+        native_decimals: 18
+        rpc: "https://rpc.qtestnet.org"
+        explorer_url: "https://explorer.q.org"
+        chain_hex_id: "0x8A73"
+
+
+signer:
+  eth_signer: ""
+
+cop:
+  disabled: true
