@@ -24,7 +24,7 @@ data:
       name: "BSC Testnet"
       icon: "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=64&q=75"
       type: "evm"
-      swap_contract: "0x9779B864D28D31064a5f43c77b42cadEec71323c" # address of swap contract
+      swap_contract: "0x9cCA217894fb8d87580B3a07F8735f4AA178D456" # address of swap contract
       rpc_endpoint: "https://data-seed-prebsc-1-s1.binance.org:8545" # network rpc
       confirmations: 12
       chain_params:
@@ -38,7 +38,7 @@ data:
       name: "Ethereum Goerli"
       icon: "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=64&q=75"
       type: "evm"
-      swap_contract: "0x23671CD3C6959F6bf4F7737a3fDBB140d40D55f1" # address of swap contract
+      swap_contract: "0x30B5f576Fb0Ab3837fFB8Ec68A6c4cA2b335E8ca" # address of swap contract
       rpc_endpoint: "https://goerli.infura.io/v3/d6e902b4a77c4c46b48cfe7dea615a69" # network rpc
       confirmations: 12
       chain_params:
@@ -48,20 +48,6 @@ data:
         rpc: "https://goerli.infura.io/v3/67e22c92921e42839c983fbdecf33525"
         explorer_url: "https://goerli.etherscan.io/"
         chain_hex_id: "0x5"
-    - id: "q-testnet"
-      name: "Q testnet"
-      icon: "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=64&q=75"
-      type: "evm"
-      swap_contract: "0x025c3f0E65DBFdA5037e15C2eE047A9ab0F239db"
-      rpc_endpoint: "https://rpc.qtestnet.org"
-      confirmations: 12
-      chain_params:
-        chain_id: 35443
-        native_symbol: "Q"
-        native_decimals: 18
-        rpc: "https://rpc.qtestnet.org"
-        explorer_url: "https://explorer.q.org"
-        chain_hex_id: "0x8A73"
 
 
 signer:
