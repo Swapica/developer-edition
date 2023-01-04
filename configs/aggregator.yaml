@@ -1,0 +1,13 @@
+log:
+  level: debug
+  disable_sentry: true
+
+listener:
+  addr: :8000
+
+data:
+  nodes:
+    - "http://swapica:8040"
+
+cop:
+  disabled: true

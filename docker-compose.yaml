@@ -8,6 +8,17 @@ services:
       - ./configs/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "8000:80"
+  aggregator:
+    # TODO: add image
+    image: ...
+    restart: unless-stopped
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    ports:
+      - "8050:8000"
+    volumes:
+      - ./configs/aggregator.yaml:/config.yaml
+    entrypoint: sh -c "aggregator-svc run service"
   swapica:
     image: slandyman/swapica
     restart: unless-stopped
