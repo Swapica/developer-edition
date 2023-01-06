@@ -18,3 +18,17 @@ services:
     volumes:
       - ./configs/swapica.yaml:/config.yaml
     entrypoint: sh -c "swapica-svc run service"
+  landing: 
+    image: swapica/landing:v1.0.0-rc.0
+    restart: unless-stopped
+    volumes:
+      - ./configs/client.js:/usr/share/nginx/html/env.js
+    ports:
+      - 8070:80
+  web_client:
+    image: swapica/web:v1.0.0-rc.0
+    restart: unless-stopped
+    volumes:
+     - ./configs/client.js:/usr/share/nginx/html/env.js
+    ports:
+      - 8060:80
