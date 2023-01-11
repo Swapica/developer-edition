@@ -1,0 +1,28 @@
+# Default values for swapica.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+version: '3.3'
+
+
+global:
+  email: "alexsh1224@gmail.com"
+  limits: true
+  issuers: true
+  IngressDomain: "preprod.swapica.io"
+
+
+swapica-svc:
+  enabled: true
+
+    
+  #Web client 
+web-client:
+  enabled: true
+
+
+  #API client
+aggregator:
+  enabled: true
+
+landing:
+  enabled: true

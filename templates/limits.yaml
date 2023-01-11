@@ -1,0 +1,24 @@
+{{- if .Values.global.limits }}
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: limits
+spec:
+  limits:
+  - default:
+      cpu: 30m
+      memory: 80Mi 
+    defaultRequest:
+      cpu: 30m
+      memory: 80Mi
+    type: Container
+{{- end }}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+# Default values for template.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: swapica/aggregator
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "vTestCI"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+vpa: false
+
+env:
+  enable: true
+  data:
+  - name: KV_VIPER_FILE
+    value: /config/config.yaml
+
+arg:
+  enable: false
+
+command:
+  enable: true
+  data:
+  - "sh"
+  - "-c"
+  - "aggregator-svc run service"
+
+config:
+  create: true
+  name: config.yaml
+  mountPath: "/config"
+  data: 
+    cop:
+      disabled: true
+    data:
+      nodes:
+      - http://api.preprod.swapica.io
+    listener:
+      addr: :8000
+    log:
+      disable_sentry: true
+      level: debug
+
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+# fsGroup: 2000
+
+securityContext:
+  # capabilities:
+  #   drop:
+  #   - ALL
+  readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  runAsUser: 1000
+  capabilities:
+    drop:
+    - ALL
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    certmanager.k8s.io/cluster-issuer: letsencrypt
+    cert-manager.io/cluster-issuer: letsencrypt
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+  - host: api.preprod.swapica.io
+    paths:
+    - path: /_api2/ 
+      pathType: ImplementationSpecific
+  tls:
+  - secretName: api-app-tls
+    hosts:
+    - api.preprod.swapica.io
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+tests: false
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
