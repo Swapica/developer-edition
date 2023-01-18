@@ -10,7 +10,7 @@ data:
     - id: "1"
       name: "Tether USDT"
       symbol: "USDT"
-      icon: "https://etherscan.io/token/images/tether_32.png"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdt/USDT.png"
       type: fungible
       chains:
         - chain_id: "goerli"
