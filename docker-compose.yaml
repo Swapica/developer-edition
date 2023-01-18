@@ -19,7 +19,7 @@ services:
       - ./configs/swapica.yaml:/config.yaml
     entrypoint: sh -c "swapica-svc run service"
   rpc-proxy:
-    image: swapica/rpc-proxy:v0.1.0
+    image: swapica/rpc-proxy:v1.0.0-rc.0
     restart: unless-stopped
     environment:
       - KV_VIPER_FILE=/config.yaml
