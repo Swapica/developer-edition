@@ -39,13 +39,13 @@ data:
       icon: "https://chainlist.org/_next/image?url=https%3A%2F%2Fdefillama.com%2Fchain-icons%2Frsz_ethereum.jpg&w=64&q=75"
       type: "evm"
       swap_contract: "0x30B5f576Fb0Ab3837fFB8Ec68A6c4cA2b335E8ca" # address of swap contract
-      rpc_endpoint: "https://goerli.infura.io/v3/d6e902b4a77c4c46b48cfe7dea615a69" # network rpc
+      rpc_endpoint: "http://rpc-proxy/goerli" # network rpc
       confirmations: 12
       chain_params:
         chain_id: 5
         native_symbol: "ETH"
         native_decimals: 18
-        rpc: "https://goerli.infura.io/v3/67e22c92921e42839c983fbdecf33525"
+        rpc: "http://rpc-proxy/goerli"
         explorer_url: "https://goerli.etherscan.io/"
         chain_hex_id: "0x5"
 
