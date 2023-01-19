@@ -16,23 +16,35 @@ data:
         - chain_id: "goerli"
           token_type: erc20
           contract_address: "0x5a735AefD4F924884414d24d4F6acA128f85C70b"
-        - chain_id: "chapel"
+        - chain_id: "fuji"
           token_type: erc20
-          contract_address: "0x2b52FE12464e1C233628B4A5eb37803485f49A4F"
+          contract_address: "0x259356c03232B051b6aD3b383859AbE7B70E63fA"
+    - id: "2"
+      name: "Native currency"
+      symbol: "ETH"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/eth/ETH.png"
+      type: fungible
+      chains:
+        - chain_id: "goerli"
+          token_type: native
+          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+        - chain_id: "fuji"
+          token_type: native
+          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
   chains:
-    - id: "chapel"
-      name: "BSC Testnet"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/bsc/BSC.png"
+    - id: "fuji"
+      name: "Avalanche Testnet"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0x9cCA217894fb8d87580B3a07F8735f4AA178D456" # address of swap contract
-      rpc_endpoint: "https://data-seed-prebsc-1-s1.binance.org:8545" # network rpc
+      swap_contract: "0x045d63214d6447dE8b5C688582BD80eCA2288144" # address of swap contract
+      rpc_endpoint: "https://rpc.ankr.com/avalanche_fuji" # network rpc
       confirmations: 12
       chain_params:
-        chain_id: 97
-        native_symbol: "BNB"
+        chain_id: 43113
+        native_symbol: "AVAX"
         native_decimals: 18
-        rpc: "https://data-seed-prebsc-1-s1.binance.org:8545"
-        explorer_url: "https://explorer.binance.org/smart-testnet"
+        rpc: "https://rpc.ankr.com/avalanche_fuji"
+        explorer_url: "https://cchain.explorer.avax-test.network"
         chain_hex_id: "0x5"
     - id: "goerli"
       name: "Ethereum Goerli"
