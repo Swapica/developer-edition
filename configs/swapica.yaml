@@ -15,10 +15,10 @@ data:
       chains:
         - chain_id: "goerli"
           token_type: erc20
-          contract_address: "0x5a735AefD4F924884414d24d4F6acA128f85C70b"
+          contract_address: "0xcf6b39a6F390132CE852472B6BaA213F6aE2F416"
         - chain_id: "fuji"
           token_type: erc20
-          contract_address: "0x259356c03232B051b6aD3b383859AbE7B70E63fA"
+          contract_address: "0xd7F28eC57bEaADd392E112c5735C5992303C0dF9"
     - id: "2"
       name: "Native currency"
       symbol: "ETH"
@@ -36,7 +36,7 @@ data:
       name: "Avalanche Testnet"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0x045d63214d6447dE8b5C688582BD80eCA2288144" # address of swap contract
+      swap_contract: "0xF10cD9CA0c5d363186F43E165538Be0cA86Cf430" # address of swap contract
       rpc_endpoint: "https://rpc.ankr.com/avalanche_fuji" # network rpc
       confirmations: 12
       chain_params:
@@ -50,7 +50,7 @@ data:
       name: "Ethereum Goerli"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0x30B5f576Fb0Ab3837fFB8Ec68A6c4cA2b335E8ca" # address of swap contract
+      swap_contract: "0x9634E1D8c09aE425790Ac582bB2A981DE2813cE1" # address of swap contract
       rpc_endpoint: "http://rpc-proxy/goerli" # network rpc
       confirmations: 12
       chain_params:
