@@ -42,3 +42,52 @@ services:
      - ./configs/client.js:/usr/share/nginx/html/env.js
     ports:
       - "8060:80"
+
+  # TODO: set to swapica/* when GitHub repo becomes public
+  indexer-goerli:
+    image: violog/indexer:v1.0.0-rc.0
+    restart: unless-stopped
+    depends_on:
+      - order-aggregator
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    volumes:
+      - ./configs/indexer-goerli.yaml:/config.yaml
+    entrypoint: sh -c "indexer-svc run service"
+  indexer-fuji:
+    image: violog/indexer:v1.0.0-rc.0
+    restart: unless-stopped
+    depends_on:
+      - order-aggregator
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    volumes:
+      - ./configs/indexer-fuji.yaml:/config.yaml
+    entrypoint: sh -c "indexer-svc run service"
+
+  order-aggregator:
+    image: violog/order-aggregator:v1.0.0-rc.0
+    restart: unless-stopped
+    depends_on:
+      - orders_db
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    ports:
+      - "8090:80"
+    volumes:
+      - ./configs/order-aggregator.yaml:/config.yaml
+    entrypoint: sh -c "order-aggregator-svc migrate up && order-aggregator-svc run service"
+  orders_db:
+    image: tokend/postgres-ubuntu:9.6
+    stop_grace_period: 1s
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=orders
+      - POSTGRES_PASSWORD=orders
+      - POSTGRES_DB=orders
+      - PGDATA=/pgdata
+    volumes:
+      - orders-data:/pgdata
+
+volumes:
+  orders-data:

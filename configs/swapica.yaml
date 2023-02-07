@@ -36,7 +36,7 @@ data:
       name: "Avalanche Testnet"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0xF10cD9CA0c5d363186F43E165538Be0cA86Cf430" # address of swap contract
+      swap_contract: "0x29dA1560DD6AbAaa522Edb39E84F99191819f8C4" # address of swap contract
       rpc_endpoint: "https://rpc.ankr.com/avalanche_fuji" # network rpc
       confirmations: 12
       chain_params:
@@ -45,19 +45,19 @@ data:
         native_decimals: 18
         rpc: "https://rpc.ankr.com/avalanche_fuji"
         explorer_url: "https://cchain.explorer.avax-test.network"
-        chain_hex_id: "0x5"
+        chain_hex_id: "0xa869"
     - id: "goerli"
       name: "Ethereum Goerli"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0x9634E1D8c09aE425790Ac582bB2A981DE2813cE1" # address of swap contract
-      rpc_endpoint: "http://rpc-proxy/goerli" # network rpc
+      swap_contract: "0xC403A5600F396AF9b5135E2Ab65446288169108A" # address of swap contract
+      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/goerli" # network rpc
       confirmations: 12
       chain_params:
         chain_id: 5
         native_symbol: "ETH"
         native_decimals: 18
-        rpc: "http://rpc-proxy/goerli"
+        rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
         explorer_url: "https://goerli.etherscan.io/"
         chain_hex_id: "0x5"
 

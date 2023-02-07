@@ -1,0 +1,14 @@
+log:
+  level: debug
+  disable_sentry: true
+
+collector:
+  endpoint: "http://order-aggregator/integrations/order-aggregator"
+  request_timeout: 1s
+
+network:
+  rpc: "https://rpc.ankr.com/avalanche_fuji"
+  contract: "0x29dA1560DD6AbAaa522Edb39E84F99191819f8C4"
+  chain_id: 43113
+  index_period: 5s
+  request_timeout: 5s

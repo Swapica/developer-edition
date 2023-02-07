@@ -1,0 +1,12 @@
+log:
+  level: debug
+  disable_sentry: true
+
+db:
+  url: "postgres://orders:orders@orders_db/orders?sslmode=disable"
+
+listener:
+  addr: :80
+
+cop:
+  disabled: true
