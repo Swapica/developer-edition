@@ -8,7 +8,10 @@ collector:
 
 network:
   rpc: "https://rpc.ankr.com/avalanche_fuji"
-  contract: "0x29dA1560DD6AbAaa522Edb39E84F99191819f8C4"
+  contract: "0xd345c8E2Cc5AD196936C686223D7915349AaDbAd"
   chain_id: 43113
-  index_period: 5s
-  request_timeout: 5s
+  index_period: 20s # period of contract calls for fetching events, should be > average_block_time
+  # optional fields
+  block_range: 3000 # max difference between start and end block on eth_getLogs call, e.g. for Fuji Ankr RPC it's 3000
+  override_last_block: "18893540" # if set, updates the last block in DB and catches up from it; need to use on sync problems and disable after restoring normal sync
+  request_timeout: 7s

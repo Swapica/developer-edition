@@ -8,7 +8,8 @@ collector:
 
 network:
   rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
-  contract: "0xC403A5600F396AF9b5135E2Ab65446288169108A"
+  contract: "0x7ee8394FcdB1EB17FEfD3E2A5D97fDB0cBa51a7F"
   chain_id: 5
-  index_period: 10s
-  request_timeout: 10s
+  index_period: 30s
+  # on troubles see more fields in indexer-fuji.yaml
+  request_timeout: 3s

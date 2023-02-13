@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:80"
   swapica:
-    image: swapica/swapica:v1.0.0-rc.2
+    image: swapica/swapica:v1.0.0-rc.3
     restart: unless-stopped
     environment:
       - KV_VIPER_FILE=/config.yaml
@@ -45,7 +45,7 @@ services:
 
   # TODO: set to swapica/* when GitHub repo becomes public
   indexer-goerli:
-    image: violog/indexer:v1.0.0-rc.0
+    image: violog/indexer:v1.0.0-rc.1
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -55,7 +55,7 @@ services:
       - ./configs/indexer-goerli.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-fuji:
-    image: violog/indexer:v1.0.0-rc.0
+    image: violog/indexer:v1.0.0-rc.1
     restart: unless-stopped
     depends_on:
       - order-aggregator
