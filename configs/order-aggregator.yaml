@@ -9,4 +9,8 @@ listener:
   addr: :80
 
 cop:
-  disabled: true
+  disabled: false
+  endpoint: "http://cop"
+  upstream: "http://order-aggregator"
+  service_name: order-aggregator
+  service_port: 80

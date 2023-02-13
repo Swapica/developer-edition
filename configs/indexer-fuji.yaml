@@ -7,7 +7,7 @@ collector:
   request_timeout: 1s
 
 network:
-  rpc: "https://rpc.ankr.com/avalanche_fuji"
+  rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji"
   contract: "0xd345c8E2Cc5AD196936C686223D7915349AaDbAd"
   chain_id: 43113
   index_period: 20s # period of contract calls for fetching events, should be > average_block_time

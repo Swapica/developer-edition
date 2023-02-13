@@ -63,7 +63,11 @@ data:
 
 
 signer:
-  eth_signer: ""
+  eth_signer: "private key of address from getSigners contract method"
 
 cop:
-  disabled: true
+  disabled: false
+  endpoint: "http://cop"
+  upstream: "http://swapica"
+  service_name: swapica
+  service_port: 80
