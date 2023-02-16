@@ -8,6 +8,9 @@ db:
 listener:
   addr: :80
 
+chains:
+  url: "http://swapica/v1/chains"
+
 cop:
   disabled: false
   endpoint: "http://cop"
