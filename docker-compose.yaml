@@ -28,7 +28,7 @@ services:
     ports:
       - "8000:80"
   swapica:
-    image: swapica/swapica:v1.0.0-rc.4
+    image: swapica/swapica:v1.0.0-rc.6
     restart: unless-stopped
     depends_on:
       - cop
