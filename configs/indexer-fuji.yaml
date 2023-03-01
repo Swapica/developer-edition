@@ -4,7 +4,7 @@ log:
 
 collector:
   endpoint: "http://order-aggregator/integrations/order-aggregator"
-  request_timeout: 1s
+  request_timeout: 3s
 
 network:
   rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji"
@@ -12,6 +12,6 @@ network:
   chain_id: 43113
   index_period: 20s # period of contract calls for fetching events, should be > average_block_time
   # optional fields
-  block_range: 3000 # max difference between start and end block on eth_getLogs call, e.g. for Fuji Ankr RPC it's 3000
+  # block_range: 3000 # max difference between start and end block for eth_getLogs call, e.g. for Fuji Ankr RPC it's 3000, for Infura see https://docs.infura.io/infura/networks/ethereum/json-rpc-methods/eth_getlogs#limitations
   override_last_block: "18893540" # if set, updates the last block in DB and catches up from it; need to use on sync problems and disable after restoring normal sync
   request_timeout: 7s

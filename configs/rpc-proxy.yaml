@@ -9,7 +9,7 @@ networks:
   mainnet: "https://mainnet.infura.io/v3/YOUR_API_KEY"
   goerli: "https://goerli.infura.io/v3/YOUR_API_KEY"
   sepolia: "https://sepolia.infura.io/v3/YOUR_API_KEY"
-  fuji: "https://rpc.ankr.com/avalanche_fuji"
+  fuji: "https://avalanche-fuji.infura.io/v3/YOUR_API_KEY"
 
 cop:
   disabled: false
