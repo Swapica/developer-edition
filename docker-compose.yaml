@@ -62,9 +62,8 @@ services:
     ports:
       - "8060:80"
 
-  # TODO: set to swapica/* when GitHub repo becomes public
   indexer-goerli:
-    image: violog/indexer:v1.0.0-rc.3
+    image: swapica/indexer:v0.1.0-rc.0
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -74,7 +73,7 @@ services:
       - ./configs/indexer-goerli.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-fuji:
-    image: violog/indexer:v1.0.0-rc.3
+    image: swapica/indexer:v0.1.0-rc.0
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -85,7 +84,7 @@ services:
     entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
-    image: violog/order-aggregator:v1.0.0-rc.12
+    image: swapica/order-aggregator:v0.1.0-rc.0
     restart: unless-stopped
     depends_on:
       - orders_db
