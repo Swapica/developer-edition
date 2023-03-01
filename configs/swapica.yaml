@@ -8,8 +8,8 @@ listener:
 data:
   tokens: # list of supported tokens
     - id: "1"
-      name: "Tether USDT"
-      symbol: "USDT"
+      name: "Token1"
+      symbol: "SWT1"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdt/USDT.png"
       type: fungible
       chains:
@@ -28,6 +28,12 @@ data:
         - chain_id: "goerli"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    - id: "3"
+      name: "Native currency"
+      symbol: "AVAX"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/eth/ETH.png" # TODO: add avax/AVAX.png
+      type: fungible
+      chains:
         - chain_id: "fuji"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
@@ -36,34 +42,38 @@ data:
       name: "Avalanche Testnet"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0xF10cD9CA0c5d363186F43E165538Be0cA86Cf430" # address of swap contract
-      rpc_endpoint: "https://rpc.ankr.com/avalanche_fuji" # network rpc
+      swap_contract: "0xd345c8E2Cc5AD196936C686223D7915349AaDbAd"
+      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/fuji" # internal: for RPC calls
       confirmations: 12
       chain_params:
         chain_id: 43113
         native_symbol: "AVAX"
         native_decimals: 18
-        rpc: "https://rpc.ankr.com/avalanche_fuji"
+        rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji" # external: appears on the client side
         explorer_url: "https://cchain.explorer.avax-test.network"
-        chain_hex_id: "0x5"
+        chain_hex_id: "0xa869"
     - id: "goerli"
       name: "Ethereum Goerli"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0x9634E1D8c09aE425790Ac582bB2A981DE2813cE1" # address of swap contract
-      rpc_endpoint: "http://rpc-proxy/goerli" # network rpc
+      swap_contract: "0x7ee8394FcdB1EB17FEfD3E2A5D97fDB0cBa51a7F"
+      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/goerli"
       confirmations: 12
       chain_params:
         chain_id: 5
         native_symbol: "ETH"
         native_decimals: 18
-        rpc: "http://rpc-proxy/goerli"
+        rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
         explorer_url: "https://goerli.etherscan.io/"
         chain_hex_id: "0x5"
 
 
 signer:
-  eth_signer: ""
+  eth_signer: "private key of address from getSigners contract method"
 
 cop:
-  disabled: true
+  disabled: false
+  endpoint: "http://cop"
+  upstream: "http://swapica"
+  service_name: swapica
+  service_port: 80

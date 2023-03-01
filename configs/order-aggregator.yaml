@@ -1,0 +1,19 @@
+log:
+  level: debug
+  disable_sentry: true
+
+db:
+  url: "postgres://orders:orders@orders_db/orders?sslmode=disable"
+
+listener:
+  addr: :80
+
+chains:
+  url: "http://swapica/v1/chains"
+
+cop:
+  disabled: false
+  endpoint: "http://cop"
+  upstream: "http://order-aggregator"
+  service_name: order-aggregator
+  service_port: 80
