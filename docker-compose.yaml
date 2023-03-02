@@ -106,5 +106,16 @@ services:
     volumes:
       - orders-data:/pgdata
 
+  relayer:
+    image: swapica/relayer:v0.1.0-rc.0
+    restart: unless-stopped
+    depends_on:
+      - cop
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    volumes:
+      - ./configs/relayer.yaml:/config.yaml
+    entrypoint: sh -c "relayer-svc run service"
+
 volumes:
   orders-data:

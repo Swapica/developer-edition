@@ -1,0 +1,27 @@
+log:
+  level: debug
+  disable_sentry: true
+
+listener:
+  addr: :80
+
+transactor:
+  private_key: "transaction sender"
+
+chains:
+  list:
+    - name: "goerli"
+      contract: "0x6700C8DA03F1aA0e36dF2E8785b444E6A663619B" # relayer contract
+      rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
+      chain_id: 5
+    - name: "fuji"
+      contract: "0x43521724efAdD527b0D5a576F827f3D622d295a8"
+      rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji"
+      chain_id: 43113
+
+cop:
+  disabled: false
+  endpoint: "http://cop"
+  upstream: "http://relayer"
+  service_name: relayer
+  service_port: 80
