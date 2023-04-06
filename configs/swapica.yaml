@@ -52,7 +52,7 @@ data:
     - id: "5"
       name: "Native currency"
       symbol: "AVAX"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/avax/AVAX.png" # TODO: add avax/AVAX.png
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/avax/AVAX.png"
       type: fungible
       chains:
         - chain_id: "fuji"
