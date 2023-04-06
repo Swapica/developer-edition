@@ -8,18 +8,6 @@ listener:
 data:
   tokens: # list of supported tokens
     - id: "1"
-      name: "Token1"
-      symbol: "SWT1"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdt/USDT.png"
-      type: fungible
-      chains:
-        - chain_id: "goerli"
-          token_type: erc20
-          contract_address: "0xcf6b39a6F390132CE852472B6BaA213F6aE2F416"
-        - chain_id: "fuji"
-          token_type: erc20
-          contract_address: "0xd7F28eC57bEaADd392E112c5735C5992303C0dF9"
-    - id: "2"
       name: "Native currency"
       symbol: "ETH"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/eth/ETH.png"
@@ -28,35 +16,45 @@ data:
         - chain_id: "goerli"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
-    - id: "3"
-      name: "Native currency"
-      symbol: "AVAX"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/eth/ETH.png" # TODO: add avax/AVAX.png
-      type: fungible
-      chains:
-        - chain_id: "fuji"
+        - chain_id: "sepolia"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+        - chain_id: "ethereum"
+          token_type: native
+          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    - id: "2"
+      name: "USDT"
+      symbol: "USDT"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdt/USDT.png"
+      type: fungible
+      chains:
+        - chain_id: "ethereum"
+          token_type: erc20
+          contract_address: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    - id: "3"
+      name: "USDC"
+      symbol: "USDC"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdc/USDC.png"
+      type: fungible
+      chains:
+        - chain_id: "ethereum"
+          token_type: erc20
+          contract_address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    - id: "4"
+      name: "WETH"
+      symbol: "WETH"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/weth/WETH.png"
+      type: fungible
+      chains:
+        - chain_id: "ethereum"
+          token_type: erc20
+          contract_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
   chains:
-    - id: "fuji"
-      name: "Avalanche Testnet"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
-      type: "evm"
-      swap_contract: "0xd345c8E2Cc5AD196936C686223D7915349AaDbAd"
-      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/fuji" # internal: for RPC calls
-      confirmations: 12
-      chain_params:
-        chain_id: 43113
-        native_symbol: "AVAX"
-        native_decimals: 18
-        rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji" # external: appears on the client side
-        explorer_url: "https://cchain.explorer.avax-test.network"
-        chain_hex_id: "0xa869"
     - id: "goerli"
       name: "Ethereum Goerli"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0x7ee8394FcdB1EB17FEfD3E2A5D97fDB0cBa51a7F"
+      swap_contract: "0xb3Ed05F9289F3aCcB61Fc418166b58171D8E0f06"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/goerli"
       confirmations: 12
       chain_params:
@@ -66,6 +64,34 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
         explorer_url: "https://goerli.etherscan.io/"
         chain_hex_id: "0x5"
+    - id: "sepolia"
+      name: "Ethereum Sepolia"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
+      type: "evm"
+      swap_contract: "0xFEb582Bc9a161380769aFaA56d84f8cf89783c8a"
+      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
+      confirmations: 12
+      chain_params:
+        chain_id: 11155111
+        native_symbol: "ETH"
+        native_decimals: 18
+        rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
+        explorer_url: "https://sepolia.etherscan.io/"
+        chain_hex_id: "0xaa36a7"
+    - id: "ethereum"
+      name: "Ethereum Mainnet"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
+      type: "evm"
+      swap_contract: "0x7ee8394FcdB1EB17FEfD3E2A5D97fDB0cBa51a7F"
+      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/mainnet"
+      confirmations: 12
+      chain_params:
+        chain_id: 1
+        native_symbol: "ETH"
+        native_decimals: 18
+        rpc: "http://rpc-proxy/integrations/rpc-proxy/mainnet"
+        explorer_url: "https://etherscan.io/"
+        chain_hex_id: "0x1"
 
 
 signer:
