@@ -49,7 +49,30 @@ data:
         - chain_id: "ethereum"
           token_type: erc20
           contract_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    - id: "5"
+      name: "Native currency"
+      symbol: "AVAX"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/avax/AVAX.png" # TODO: add avax/AVAX.png
+      type: fungible
+      chains:
+        - chain_id: "fuji"
+          token_type: native
+          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
   chains:
+    - id: "fuji"
+      name: "Avalanche Testnet"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
+      type: "evm"
+      swap_contract: "0x9493e2970931D9a182AB99290B3F43347F1b8b9a"
+      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/fuji" # internal: for RPC calls
+      confirmations: 12
+      chain_params:
+        chain_id: 43113
+        native_symbol: "AVAX"
+        native_decimals: 18
+        rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji" # external: appears on the client side
+        explorer_url: "https://cchain.explorer.avax-test.network"
+        chain_hex_id: "0xa869"
     - id: "goerli"
       name: "Ethereum Goerli"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
