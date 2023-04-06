@@ -19,37 +19,7 @@ data:
         - chain_id: "sepolia"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
-        - chain_id: "ethereum"
-          token_type: native
-          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
     - id: "2"
-      name: "USDT"
-      symbol: "USDT"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdt/USDT.png"
-      type: fungible
-      chains:
-        - chain_id: "ethereum"
-          token_type: erc20
-          contract_address: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-    - id: "3"
-      name: "USDC"
-      symbol: "USDC"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdc/USDC.png"
-      type: fungible
-      chains:
-        - chain_id: "ethereum"
-          token_type: erc20
-          contract_address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-    - id: "4"
-      name: "WETH"
-      symbol: "WETH"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/weth/WETH.png"
-      type: fungible
-      chains:
-        - chain_id: "ethereum"
-          token_type: erc20
-          contract_address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
-    - id: "5"
       name: "Native currency"
       symbol: "AVAX"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/avax/AVAX.png"
@@ -61,7 +31,7 @@ data:
   chains:
     - id: "fuji"
       name: "Avalanche Testnet"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/avalanche/avalanche.png"
       type: "evm"
       swap_contract: "0x9493e2970931D9a182AB99290B3F43347F1b8b9a"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/fuji" # internal: for RPC calls
@@ -101,20 +71,6 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
         explorer_url: "https://sepolia.etherscan.io/"
         chain_hex_id: "0xaa36a7"
-    - id: "ethereum"
-      name: "Ethereum Mainnet"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
-      type: "evm"
-      swap_contract: "0x7ee8394FcdB1EB17FEfD3E2A5D97fDB0cBa51a7F"
-      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/mainnet"
-      confirmations: 12
-      chain_params:
-        chain_id: 1
-        native_symbol: "ETH"
-        native_decimals: 18
-        rpc: "http://rpc-proxy/integrations/rpc-proxy/mainnet"
-        explorer_url: "https://etherscan.io/"
-        chain_hex_id: "0x1"
 
 
 signer:
