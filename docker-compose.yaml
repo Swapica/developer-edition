@@ -82,6 +82,16 @@ services:
     volumes:
       - ./configs/indexer-fuji.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
+  indexer-sepolia:
+    image: swapica/indexer:v0.1.0-rc.0
+    restart: unless-stopped
+    depends_on:
+      - order-aggregator
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    volumes:
+      - ./configs/indexer-sepolia.yaml:/config.yaml
+    entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
     image: swapica/order-aggregator:v0.1.0-rc.0

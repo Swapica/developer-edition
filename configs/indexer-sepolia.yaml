@@ -7,9 +7,9 @@ collector:
   request_timeout: 3s
 
 network:
-  rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
-  contract: "0xb3Ed05F9289F3aCcB61Fc418166b58171D8E0f06"
-  chain_id: 5
+  rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
+  contract: "0xFEb582Bc9a161380769aFaA56d84f8cf89783c8a"
+  chain_id: 11155111
   index_period: 30s
   # on troubles see more fields in indexer-fuji.yaml
   request_timeout: 7s
