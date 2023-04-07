@@ -43,6 +43,7 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji" # external: appears on the client side
         explorer_url: "https://cchain.explorer.avax-test.network"
         chain_hex_id: "0xa869"
+        chain_type: "testnet"
     - id: "goerli"
       name: "Ethereum Goerli"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
@@ -57,6 +58,7 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
         explorer_url: "https://goerli.etherscan.io/"
         chain_hex_id: "0x5"
+        chain_type: "testnet"
     - id: "sepolia"
       name: "Ethereum Sepolia"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
@@ -71,6 +73,7 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
         explorer_url: "https://sepolia.etherscan.io/"
         chain_hex_id: "0xaa36a7"
+        chain_type: "testnet"
 
 
 signer:
