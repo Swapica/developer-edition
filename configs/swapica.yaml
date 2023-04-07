@@ -88,6 +88,7 @@ data:
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/q/q.png"
       swap_contract: "0xB9Fa73D0fF6D98c839e15B0a513be899e9671a92"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
+      type: "evm"
       confirmations: 12
       chain_params:
         chain_id: 35443

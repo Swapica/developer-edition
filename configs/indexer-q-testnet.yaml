@@ -8,7 +8,7 @@ collector:
 
 network:
   rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
-  contract: "0xFEb582Bc9a161380769aFaA56d84f8cf89783c8a"
+  contract: "0xB9Fa73D0fF6D98c839e15B0a513be899e9671a92"
   chain_id: 35443
   index_period: 30s
   # on troubles see more fields in indexer-fuji.yaml
