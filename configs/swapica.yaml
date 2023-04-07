@@ -92,7 +92,7 @@ data:
       confirmations: 12
       chain_params:
         chain_id: 35443
-        native_symbol: "Q"
+        native_symbol: "Q "
         native_decimals: 18
         rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
         explorer_url: "https://explorer.qtestnet.org/"
