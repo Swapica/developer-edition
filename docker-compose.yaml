@@ -48,14 +48,14 @@ services:
       - ./configs/rpc-proxy.yaml:/config.yaml
     entrypoint: sh -c "rpc-proxy-svc run service"
   landing: 
-    image: swapica/landing:v1.0.0-rc.4
+    image: swapica/landing:v1.0.0-rc.6
     restart: unless-stopped
     volumes:
       - ./configs/client.js:/usr/share/nginx/html/env.js
     ports:
       - "8070:80"
   web_client:
-    image: swapica/web:v1.0.0-rc.14
+    image: swapica/web:v1.0.0-rc.15
     restart: unless-stopped
     volumes:
      - ./configs/client.js:/usr/share/nginx/html/env.js
