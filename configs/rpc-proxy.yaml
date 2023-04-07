@@ -10,6 +10,7 @@ networks:
   goerli: "https://goerli.infura.io/v3/YOUR_API_KEY"
   sepolia: "https://sepolia.infura.io/v3/YOUR_API_KEY"
   fuji: "https://avalanche-fuji.infura.io/v3/YOUR_API_KEY"
+  q_testnet: "https://rpc.qtestnet.org"
 
 cop:
   disabled: false

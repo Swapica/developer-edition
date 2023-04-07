@@ -28,6 +28,15 @@ data:
         - chain_id: "fuji"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    - id: "3"
+      name: "Native currency"
+      symbol: "Q"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/q/Q.png"
+      type: fungible
+      chains:
+        - chain_id: "q-testnet"
+          token_type: native
+          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
   chains:
     - id: "fuji"
       name: "Avalanche Testnet"
@@ -73,6 +82,20 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
         explorer_url: "https://sepolia.etherscan.io/"
         chain_hex_id: "0xaa36a7"
+        chain_type: "testnet"
+    - id: "q-testnet"
+      name: "Q Testnet"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/q/q.png"
+      swap_contract: "0xB9Fa73D0fF6D98c839e15B0a513be899e9671a92"
+      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
+      confirmations: 12
+      chain_params:
+        chain_id: 35443
+        native_symbol: "Q"
+        native_decimals: 18
+        rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
+        explorer_url: "https://explorer.qtestnet.org/"
+        chain_hex_id: "0x8a73"
         chain_type: "testnet"
 
 

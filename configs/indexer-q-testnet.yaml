@@ -1,0 +1,16 @@
+log:
+  level: debug
+  disable_sentry: true
+
+collector:
+  endpoint: "http://order-aggregator/integrations/order-aggregator"
+  request_timeout: 3s
+
+network:
+  rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
+  contract: "0xFEb582Bc9a161380769aFaA56d84f8cf89783c8a"
+  chain_id: 35443
+  index_period: 30s
+  # on troubles see more fields in indexer-fuji.yaml
+  override_last_block: "5787243"
+  request_timeout: 7s
