@@ -53,6 +53,7 @@ data:
         explorer_url: "https://cchain.explorer.avax-test.network"
         chain_hex_id: "0xa869"
         chain_type: "testnet"
+        public_rpc: "https://api.avax-test.network/ext/bc/C/rpc"
     - id: "goerli"
       name: "Ethereum Goerli"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
@@ -68,6 +69,7 @@ data:
         explorer_url: "https://goerli.etherscan.io/"
         chain_hex_id: "0x5"
         chain_type: "testnet"
+        public_rpc: "https://eth-goerli.public.blastapi.io"
     - id: "sepolia"
       name: "Ethereum Sepolia"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
@@ -83,6 +85,7 @@ data:
         explorer_url: "https://sepolia.etherscan.io/"
         chain_hex_id: "0xaa36a7"
         chain_type: "testnet"
+        public_rpc: "https://eth-sepolia.public.blastapi.io"
     - id: "q-testnet"
       name: "Q Testnet"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/q/q.png"
@@ -98,6 +101,7 @@ data:
         explorer_url: "https://explorer.qtestnet.org/"
         chain_hex_id: "0x8a73"
         chain_type: "testnet"
+        public_rpc: "https://rpc.qtestnet.org"
 
 
 signer:
