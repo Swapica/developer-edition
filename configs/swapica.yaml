@@ -37,6 +37,25 @@ data:
         - chain_id: "q-testnet"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    - id: "4"
+      name: "Mock1"
+      symbol: "Mock1"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/eth/ETH.png"
+      type: fungible
+      chains:
+        - chain_id: "goerli"
+          token_type: erc20
+          contract_address: "0x9109c4b08eE452D6145D9496F9542A13f48701E4"
+          max_amount: ""
+    - id: "5"
+      name: "Mock2"
+      symbol: "Mock2"
+      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/eth/ETH.png"
+      type: fungible
+      chains:
+        - chain_id: "goerli"
+          token_type: erc20
+          contract_address: "0xd0485747e4e1ef7109041ee9108f27474955f570"
   chains:
     - id: "fuji"
       name: "Avalanche Testnet"
@@ -84,7 +103,7 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
         explorer_url: "https://sepolia.etherscan.io/"
         chain_hex_id: "0xaa36a7"
-        chain_type: "testnet"
+        chain_type: "mainnet"
         public_rpc: "https://eth-sepolia.public.blastapi.io"
     - id: "q-testnet"
       name: "Q Testnet"
@@ -100,7 +119,7 @@ data:
         rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
         explorer_url: "https://explorer.qtestnet.org/"
         chain_hex_id: "0x8a73"
-        chain_type: "testnet"
+        chain_type: "mainnet"
         public_rpc: "https://rpc.qtestnet.org"
 
 
