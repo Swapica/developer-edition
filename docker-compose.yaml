@@ -28,7 +28,7 @@ services:
     ports:
       - "8000:80"
   swapica:
-    image: swapica/swapica:v1.0.0-rc.9
+    image: swapica/swapica:v1.0.0-rc.10
     restart: unless-stopped
     depends_on:
       - cop
@@ -63,7 +63,7 @@ services:
       - "8060:80"
 
   indexer-goerli:
-    image: swapica/indexer:v0.1.0-rc.0
+    image: swapica/indexer:v0.1.0-rc.1
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -73,7 +73,7 @@ services:
       - ./configs/indexer-goerli.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-fuji:
-    image: swapica/indexer:v0.1.0-rc.0
+    image: swapica/indexer:v0.1.0-rc.1
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -83,7 +83,7 @@ services:
       - ./configs/indexer-fuji.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-sepolia:
-    image: swapica/indexer:v0.1.0-rc.0
+    image: swapica/indexer:v0.1.0-rc.1
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -93,7 +93,7 @@ services:
       - ./configs/indexer-sepolia.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-q-testnet:
-    image: swapica/indexer:v0.1.0-rc.0
+    image: swapica/indexer:v0.1.0-rc.1
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -104,7 +104,7 @@ services:
     entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
-    image: swapica/order-aggregator:v0.1.0-rc.0
+    image: swapica/order-aggregator:v0.1.0-rc.1
     restart: unless-stopped
     depends_on:
       - orders_db
