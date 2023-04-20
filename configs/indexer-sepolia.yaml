@@ -8,8 +8,9 @@ collector:
 
 network:
   rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
-  contract: "0xFEb582Bc9a161380769aFaA56d84f8cf89783c8a"
+  contract: "0xc453792E6C896f0808BC45E271F811d2010cA62e"
   chain_id: 11155111
   index_period: 30s
   # on troubles see more fields in indexer-fuji.yaml
   request_timeout: 7s
+  override_last_block: "3313750"

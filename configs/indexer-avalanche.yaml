@@ -1,0 +1,15 @@
+log:
+  level: debug
+  disable_sentry: true
+
+collector:
+  endpoint: "http://order-aggregator/integrations/order-aggregator"
+  request_timeout: 3s
+
+network:
+  rpc: "http://rpc-proxy/integrations/rpc-proxy/avalanche"
+  contract: "0x0Ac28BcDcef8D8C95c4a079418dbC34e4AD4DF1D"
+  chain_id: 43114
+  index_period: 20s # period of contract calls for fetching events, should be > average_block_time
+  override_last_block: "28986738" # if set, updates the last block in DB and catches up from it; need to use on sync problems and disable after restoring normal sync
+  request_timeout: 7s

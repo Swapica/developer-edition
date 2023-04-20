@@ -11,6 +11,7 @@ networks:
   sepolia: "https://sepolia.infura.io/v3/YOUR_API_KEY"
   fuji: "https://avalanche-fuji.infura.io/v3/YOUR_API_KEY"
   q_testnet: "https://rpc.qtestnet.org"
+  avalanche: "https://avalanche-mainnet.infura.io/v3/YOUR_API_KEY"
 
 cop:
   disabled: false
