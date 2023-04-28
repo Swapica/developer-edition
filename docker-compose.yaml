@@ -28,7 +28,7 @@ services:
     ports:
       - "8000:80"
   swapica:
-    image: swapica/swapica:v1.0.0-rc.10
+    image: swapica/swapica:v1.0.0-rc.11
     restart: unless-stopped
     depends_on:
       - cop
@@ -84,7 +84,7 @@ services:
     entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
-    image: swapica/order-aggregator:v0.1.0-rc.1
+    image: swapica/order-aggregator:v0.1.0-rc.2
     restart: unless-stopped
     depends_on:
       - orders_db
@@ -105,6 +105,17 @@ services:
       - PGDATA=/pgdata
     volumes:
       - orders-data:/pgdata
+  relayer:
+    image: swapica/relayer:v0.1.0-rc.1
+    restart: unless-stopped
+    depends_on:
+      - cop
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    volumes:
+      - ./configs/relayer.yaml:/config.yaml
+    entrypoint: sh -c "relayer-svc run service"
+
 
 volumes:
   orders-data:
