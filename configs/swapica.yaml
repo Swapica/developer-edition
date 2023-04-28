@@ -13,10 +13,6 @@ data:
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/eth/ETH.png"
       type: fungible
       chains:
-        - chain_id: "goerli"
-          token_type: native
-          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
-          max_amount: 100
         - chain_id: "sepolia"
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
@@ -31,46 +27,12 @@ data:
           token_type: native
           contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
           max_amount: 100
-        - chain_id: "avalanche"
-          token_type: native
-          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
-          max_amount: 0.25
-    - id: "3"
-      name: "Native currency"
-      symbol: "Q"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/q/Q.png"
-      type: fungible
-      chains:
-        - chain_id: "q-testnet"
-          token_type: native
-          contract_address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
-          max_amount: 100
-    - id: "4"
-      name: "USDT"
-      symbol: "USDT"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdt/USDT.png"
-      type: fungible
-      chains:
-        - chain_id: "avalanche"
-          token_type: erc20
-          contract_address: "0xc7198437980c041c805A1EDcbA50c1Ce5db95118"
-          max_amount: 500
-    - id: "5"
-      name: "USDC"
-      symbol: "USDC"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/tokens/usdc/USDC.png"
-      type: fungible
-      chains:
-        - chain_id: "avalanche"
-          token_type: erc20
-          contract_address: "0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E"
-          max_amount: 500
   chains:
     - id: "fuji"
       name: "Avalanche Testnet"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/avalanche/avalanche.png"
       type: "evm"
-      swap_contract: "0xCb4c864ec5355E6E01dB7118547cD0b355b8A2f4"
+      swap_contract: "0xD99105Cc612dbfFb3be1437eCe534A812BfbD35a"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/fuji" # internal: for RPC calls
       confirmations: 12
       chain_params:
@@ -82,27 +44,11 @@ data:
         chain_hex_id: "0xa869"
         chain_type: "testnet"
         public_rpc: "https://api.avax-test.network/ext/bc/C/rpc"
-    - id: "goerli"
-      name: "Ethereum Goerli"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
-      type: "evm"
-      swap_contract: "0x873264D287b44f9DaCAfB1Ef0b775bF25b573A15"
-      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/goerli"
-      confirmations: 12
-      chain_params:
-        chain_id: 5
-        native_symbol: "ETH"
-        native_decimals: 18
-        rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
-        explorer_url: "https://goerli.etherscan.io/"
-        chain_hex_id: "0x5"
-        chain_type: "testnet"
-        public_rpc: "https://eth-goerli.public.blastapi.io"
     - id: "sepolia"
       name: "Ethereum Sepolia"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
-      swap_contract: "0xc453792E6C896f0808BC45E271F811d2010cA62e"
+      swap_contract: "0xB2452930B6Cd3da604f0B24639ce5808E8E3dF03"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
       confirmations: 12
       chain_params:
@@ -114,39 +60,6 @@ data:
         chain_hex_id: "0xaa36a7"
         chain_type: "testnet"
         public_rpc: "https://eth-sepolia.public.blastapi.io"
-    - id: "q-testnet"
-      name: "Q Testnet"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/q/q.png"
-      swap_contract: "0x37987Dc60534e1bAfd463ac49b88812ABEb17718"
-      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
-      type: "evm"
-      confirmations: 12
-      chain_params:
-        chain_id: 35443
-        native_symbol: "Q "
-        native_decimals: 18
-        rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
-        explorer_url: "https://explorer.qtestnet.org/"
-        chain_hex_id: "0x8a73"
-        chain_type: "testnet"
-        public_rpc: "https://rpc.qtestnet.org"
-    - id: "avalanche"
-      name: "Avalanche Mainnet"
-      icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/avalanche/avalanche.png"
-      swap_contract: "0x0Ac28BcDcef8D8C95c4a079418dbC34e4AD4DF1D"
-      rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/avalanche"
-      type: "evm"
-      confirmations: 12
-      chain_params:
-        chain_id: 43114
-        native_symbol: "AVAX"
-        native_decimals: 18
-        rpc: "http://rpc-proxy/integrations/rpc-proxy/avalanche"
-        explorer_url: "https://snowtrace.io/"
-        chain_hex_id: "0xa86a"
-        chain_type: "mainnet"
-        public_rpc: "https://api.avax.network/ext/bc/C/rpc"
-
 
 signer:
   eth_signer: "private key of address from getSigners contract method"

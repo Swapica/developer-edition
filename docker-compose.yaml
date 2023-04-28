@@ -55,23 +55,13 @@ services:
     ports:
       - "8070:80"
   web_client:
-    image: swapica/web:v1.0.0-rc.21
+    image: swapica/web:v1.0.0-rc.23
     restart: unless-stopped
     volumes:
      - ./configs/client.js:/usr/share/nginx/html/env.js
     ports:
       - "8060:80"
 
-  indexer-goerli:
-    image: swapica/indexer:v0.1.0-rc.1
-    restart: unless-stopped
-    depends_on:
-      - order-aggregator
-    environment:
-      - KV_VIPER_FILE=/config.yaml
-    volumes:
-      - ./configs/indexer-goerli.yaml:/config.yaml
-    entrypoint: sh -c "indexer-svc run service"
   indexer-fuji:
     image: swapica/indexer:v0.1.0-rc.1
     restart: unless-stopped
@@ -91,16 +81,6 @@ services:
       - KV_VIPER_FILE=/config.yaml
     volumes:
       - ./configs/indexer-sepolia.yaml:/config.yaml
-    entrypoint: sh -c "indexer-svc run service"
-  indexer-q-testnet:
-    image: swapica/indexer:v0.1.0-rc.1
-    restart: unless-stopped
-    depends_on:
-      - order-aggregator
-    environment:
-      - KV_VIPER_FILE=/config.yaml
-    volumes:
-      - ./configs/indexer-q-testnet.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:

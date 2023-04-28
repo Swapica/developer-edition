@@ -8,10 +8,10 @@ collector:
 
 network:
   rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji"
-  contract: "0xCb4c864ec5355E6E01dB7118547cD0b355b8A2f4"
+  contract: "0xD99105Cc612dbfFb3be1437eCe534A812BfbD35a"
   chain_id: 43113
   index_period: 20s # period of contract calls for fetching events, should be > average_block_time
   # optional fields
   # block_range: 3000 # max difference between start and end block for eth_getLogs call, e.g. for Fuji Ankr RPC it's 3000, for Infura see https://docs.infura.io/infura/networks/ethereum/json-rpc-methods/eth_getlogs#limitations
-  override_last_block: "21037746" # if set, updates the last block in DB and catches up from it; need to use on sync problems and disable after restoring normal sync
+  override_last_block: "21233282" # if set, updates the last block in DB and catches up from it; need to use on sync problems and disable after restoring normal sync
   request_timeout: 7s
