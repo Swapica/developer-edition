@@ -102,6 +102,16 @@ services:
     volumes:
       - ./configs/indexer-q-testnet.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
+  indexer-avalanche:
+    image: swapica/indexer:v0.1.0-rc.1
+    restart: unless-stopped
+    depends_on:
+      - order-aggregator
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    volumes:
+      - ./configs/indexer-avalanche.yaml:/config.yaml
+    entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
     image: swapica/order-aggregator:v0.1.0-rc.1
