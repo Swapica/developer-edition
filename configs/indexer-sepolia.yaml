@@ -11,6 +11,8 @@ network:
   contract: "0xB2452930B6Cd3da604f0B24639ce5808E8E3dF03"
   chain_id: 11155111
   index_period: 30s
+  use_websocket: true
+  ws: "wss://sepolia.infura.io/ws/v3/3dc0806d2f734be6968d8515f49a5a1d" # required to subscribe to blocks
+  override_last_block: "3359098"
   # on troubles see more fields in indexer-fuji.yaml
   request_timeout: 7s
-  override_last_block: "3359098"

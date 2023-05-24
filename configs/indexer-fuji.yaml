@@ -11,7 +11,9 @@ network:
   contract: "0xD99105Cc612dbfFb3be1437eCe534A812BfbD35a"
   chain_id: 43113
   index_period: 20s # period of contract calls for fetching events, should be > average_block_time
+  use_websocket: true
+  ws: "wss://api.avax-test.network/ext/bc/C/ws" # required to subscribe to blocks
+  override_last_block: "21233282" # block to begin with
   # optional fields
   # block_range: 3000 # max difference between start and end block for eth_getLogs call, e.g. for Fuji Ankr RPC it's 3000, for Infura see https://docs.infura.io/infura/networks/ethereum/json-rpc-methods/eth_getlogs#limitations
-  override_last_block: "21233282" # if set, updates the last block in DB and catches up from it; need to use on sync problems and disable after restoring normal sync
   request_timeout: 7s
