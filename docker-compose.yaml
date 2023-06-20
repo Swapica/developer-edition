@@ -63,7 +63,7 @@ services:
       - "8060:80"
 
   indexer-fuji:
-    image: swapica/indexer:v0.1.0-rc.1
+    image: swapica/indexer:v0.1.0-rc.2
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -73,7 +73,7 @@ services:
       - ./configs/indexer-fuji.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-sepolia:
-    image: swapica/indexer:v0.1.0-rc.1
+    image: swapica/indexer:v0.1.0-rc.2
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -84,7 +84,7 @@ services:
     entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
-    image: swapica/order-aggregator:v0.1.0-rc.2
+    image: swapica/order-aggregator:v0.1.0-rc.4
     restart: unless-stopped
     depends_on:
       - orders_db
