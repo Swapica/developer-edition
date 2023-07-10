@@ -13,7 +13,7 @@ chains:
     - name: "sepolia"
       contract: "0xFbae44a113A6f07687b180605f425e43066a6179" # relayer contract
       rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
-      chain_id: 5
+      chain_id: 11155111
     - name: "fuji"
       contract: "0x514BCFEBe3Dc2C04d14Ae67FEd49481C8d7E090C"
       rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji"
