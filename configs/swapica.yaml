@@ -33,6 +33,7 @@ data:
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/avalanche/avalanche.png"
       type: "evm"
       swap_contract: "0xD99105Cc612dbfFb3be1437eCe534A812BfbD35a"
+      relayer_contract: "0x514BCFEBe3Dc2C04d14Ae67FEd49481C8d7E090C" # address of automatic relayer contract
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/fuji" # internal: for RPC calls
       confirmations: 12
       chain_params:
@@ -49,6 +50,7 @@ data:
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
       swap_contract: "0xB2452930B6Cd3da604f0B24639ce5808E8E3dF03"
+      relayer_contract: "0xFbae44a113A6f07687b180605f425e43066a6179"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
       confirmations: 12
       chain_params:
