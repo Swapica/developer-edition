@@ -28,7 +28,7 @@ services:
     ports:
       - "8000:80"
   swapica:
-    image: swapica/swapica:v1.0.0-rc.13
+    image: swapica/swapica:v1.0.0-rc.14
     restart: unless-stopped
     depends_on:
       - cop
@@ -63,7 +63,7 @@ services:
       - "8060:80"
 
   indexer-fuji:
-    image: swapica/indexer:v0.1.0-rc.2
+    image: swapica/indexer:v0.1.0-rc.3
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -73,7 +73,7 @@ services:
       - ./configs/indexer-fuji.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-sepolia:
-    image: swapica/indexer:v0.1.0-rc.2
+    image: swapica/indexer:v0.1.0-rc.3
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -106,7 +106,7 @@ services:
     volumes:
       - orders-data:/pgdata
   relayer:
-    image: swapica/relayer:v0.1.0-rc.1
+    image: swapica/relayer:v0.1.0-rc.2
     restart: unless-stopped
     depends_on:
       - cop
