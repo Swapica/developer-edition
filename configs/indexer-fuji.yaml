@@ -15,5 +15,5 @@ network:
   ws: "wss://api.avax-test.network/ext/bc/C/ws" # required to subscribe to blocks
   override_last_block: "21233282" # block to begin with
   # optional fields
-  # block_range: 3000 # max difference between start and end block for eth_getLogs call, e.g. for Fuji Ankr RPC it's 3000, for Infura see https://docs.infura.io/infura/networks/ethereum/json-rpc-methods/eth_getlogs#limitations
+  block_range: 2047 # max difference between start and end block for eth_getLogs call, e.g. for Fuji Ankr RPC it's 3000, for Infura see https://docs.infura.io/infura/networks/ethereum/json-rpc-methods/eth_getlogs#limitations
   request_timeout: 7s
