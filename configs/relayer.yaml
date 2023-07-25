@@ -9,7 +9,7 @@ transactor:
   private_key: "transaction sender"
 
 token_chains:
-  url: "http://swapica"
+  url: "http://swapica/v1/token_chains"
 
 chains:
   list:
