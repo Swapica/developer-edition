@@ -84,7 +84,7 @@ services:
     entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
-    image: swapica/order-aggregator:v0.1.0-rc.8
+    image: swapica/order-aggregator:v0.1.0-rc.9
     restart: unless-stopped
     depends_on:
       - orders_db
