@@ -55,7 +55,7 @@ services:
     ports:
       - "8070:80"
   web_client:
-    image: swapica/web:v1.0.0-rc.25.2-dev
+    image: swapica/web:v1.0.0-rc.25.3-dev
     restart: unless-stopped
     volumes:
      - ./configs/client.js:/usr/share/nginx/html/env.js
