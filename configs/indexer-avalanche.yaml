@@ -11,5 +11,8 @@ network:
   contract: "0x0Ac28BcDcef8D8C95c4a079418dbC34e4AD4DF1D"
   chain_id: 43114
   index_period: 20s # period of contract calls for fetching events, should be > average_block_time
+  use_websocket: true
+  ws: "wss://api.avax.network/ext/bc/C/ws"
   override_last_block: "28986738" # if set, updates the last block in DB and catches up from it; need to use on sync problems and disable after restoring normal sync
   request_timeout: 7s
+  block_range: 2047

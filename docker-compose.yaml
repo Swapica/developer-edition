@@ -28,7 +28,7 @@ services:
     ports:
       - "8000:80"
   swapica:
-    image: swapica/swapica:v1.0.0-rc.10
+    image: swapica/swapica:v1.0.0-rc.20
     restart: unless-stopped
     depends_on:
       - cop
@@ -48,14 +48,14 @@ services:
       - ./configs/rpc-proxy.yaml:/config.yaml
     entrypoint: sh -c "rpc-proxy-svc run service"
   landing: 
-    image: swapica/landing:v1.0.0-rc.10
+    image: swapica/landing:v1.0.0-rc.11
     restart: unless-stopped
     volumes:
       - ./configs/client.js:/usr/share/nginx/html/env.js
     ports:
       - "8070:80"
   web_client:
-    image: swapica/web:v1.0.0-rc.24
+    image: swapica/web:v1.0.0-rc.25
     restart: unless-stopped
     volumes:
      - ./configs/client.js:/usr/share/nginx/html/env.js
@@ -63,7 +63,7 @@ services:
       - "8060:80"
 
   indexer-goerli:
-    image: swapica/indexer:v0.1.0-rc.1
+    image: swapica/indexer:v0.1.0-rc.5
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -73,7 +73,7 @@ services:
       - ./configs/indexer-goerli.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-fuji:
-    image: swapica/indexer:v0.1.0-rc.1
+    image: swapica/indexer:v0.1.0-rc.5
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -83,7 +83,7 @@ services:
       - ./configs/indexer-fuji.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-sepolia:
-    image: swapica/indexer:v0.1.0-rc.1
+    image: swapica/indexer:v0.1.0-rc.5
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -93,7 +93,7 @@ services:
       - ./configs/indexer-sepolia.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-q-testnet:
-    image: swapica/indexer:v0.1.0-rc.1
+    image: swapica/indexer:v0.1.0-rc.5
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -103,7 +103,7 @@ services:
       - ./configs/indexer-q-testnet.yaml:/config.yaml
     entrypoint: sh -c "indexer-svc run service"
   indexer-avalanche:
-    image: swapica/indexer:v0.1.0-rc.1
+    image: swapica/indexer:v0.1.0-rc.5
     restart: unless-stopped
     depends_on:
       - order-aggregator
@@ -114,7 +114,7 @@ services:
     entrypoint: sh -c "indexer-svc run service"
 
   order-aggregator:
-    image: swapica/order-aggregator:v0.1.0-rc.1
+    image: swapica/order-aggregator:v0.1.0-rc.9
     restart: unless-stopped
     depends_on:
       - orders_db
@@ -135,6 +135,16 @@ services:
       - PGDATA=/pgdata
     volumes:
       - orders-data:/pgdata
+  relayer:
+    image: swapica/relayer:v0.1.0-rc.2
+    restart: unless-stopped
+    depends_on:
+      - cop
+    environment:
+      - KV_VIPER_FILE=/config.yaml
+    volumes:
+      - ./configs/relayer.yaml:/config.yaml
+    entrypoint: sh -c "relayer-svc run service"
 
 volumes:
   orders-data:

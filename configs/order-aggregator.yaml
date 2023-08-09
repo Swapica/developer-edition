@@ -11,6 +11,12 @@ listener:
 chains:
   url: "http://swapica/v1/chains"
 
+notifications:
+  push_url: "https://backend.epns.io/apis" # prod; use https://backend-staging.epns.io/apis for staging
+  channel_address: ""
+  push_comm_address: "0xb3971bcef2d791bc4027bbfedfb47319a4aaaaaa" # Ethereum Mainnet and Goerli
+  private_key: ""
+
 cop:
   disabled: false
   endpoint: "http://cop"

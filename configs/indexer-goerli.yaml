@@ -11,6 +11,8 @@ network:
   contract: "0x873264D287b44f9DaCAfB1Ef0b775bF25b573A15"
   chain_id: 5
   index_period: 30s
+  use_websocket: true
+  ws: "wss://goerli.infura.io/ws/v3/YOUR_API_KEY" # required to subscribe to blocks
   # on troubles see more fields in indexer-fuji.yaml
   request_timeout: 7s
   override_last_block: "8850604"

@@ -1,0 +1,42 @@
+log:
+  level: debug
+  disable_sentry: true
+
+listener:
+  addr: :80
+
+transactor:
+  private_key: ""
+
+token_chains:
+  url: "http://swapica/v1/token_chains"
+
+chains:
+  list:
+    - name: "avalanche"
+      contract: "0xa651EdBbF77e1A2678DEfaE08A33c5004b491457" # relayer contract
+      rpc: "http://rpc-proxy/integrations/rpc-proxy/avalanche"
+      chain_id: 43114
+    - name: "goerli"
+      contract: "0xfBDf531661B4Cbe5aa36fF485199dDa3F5e32577"
+      rpc: "http://rpc-proxy/integrations/rpc-proxy/goerli"
+      chain_id: 5
+    - name: "q-testnet"
+      contract: "0x1c58aEeA2D5E6EB9DFAA0c800F6B5E84ECDf5513"
+      rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
+      chain_id: 35443
+    - name: "sepolia"
+      contract: "0x70bDc294B11dbB44b45b0f5dEff174A81cd7701f"
+      rpc: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
+      chain_id: 11155111
+    - name: "fuji"
+      contract: "0xf7ed68014159b2668De5556B21453E0221E138dc"
+      rpc: "http://rpc-proxy/integrations/rpc-proxy/fuji"
+      chain_id: 43113
+
+cop:
+  disabled: false
+  endpoint: "http://cop"
+  upstream: "http://relayer"
+  service_name: relayer
+  service_port: 80
