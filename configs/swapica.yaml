@@ -5,6 +5,14 @@ log:
 listener:
   addr: :80
 
+runner:
+  use_relayer: true
+  relayer_endpoint: "http://relayer/integrations/relayer"
+  timeout: 3s
+  aggregator:
+    endpoint: "http://order-aggregator/integrations/order-aggregator"
+    ws: "ws://order-aggregator/ws"
+
 data:
   tokens: # list of supported tokens
     - id: "1"
@@ -71,6 +79,7 @@ data:
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/avalanche/avalanche.png"
       type: "evm"
       swap_contract: "0xCb4c864ec5355E6E01dB7118547cD0b355b8A2f4"
+      relayer_contract: "0xf7ed68014159b2668De5556B21453E0221E138dc" # address of automatic relayer contract
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/fuji" # internal: for RPC calls
       confirmations: 12
       chain_params:
@@ -87,6 +96,7 @@ data:
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
       swap_contract: "0x873264D287b44f9DaCAfB1Ef0b775bF25b573A15"
+      relayer_contract: "0xfBDf531661B4Cbe5aa36fF485199dDa3F5e32577"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/goerli"
       confirmations: 12
       chain_params:
@@ -103,6 +113,7 @@ data:
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/ethereum/ethereum.png"
       type: "evm"
       swap_contract: "0xc453792E6C896f0808BC45E271F811d2010cA62e"
+      relayer_contract: "0x70bDc294B11dbB44b45b0f5dEff174A81cd7701f"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/sepolia"
       confirmations: 12
       chain_params:
@@ -118,12 +129,13 @@ data:
       name: "Q Testnet"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/q/q.png"
       swap_contract: "0x37987Dc60534e1bAfd463ac49b88812ABEb17718"
+      relayer_contract: "0x1c58aEeA2D5E6EB9DFAA0c800F6B5E84ECDf5513"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
       type: "evm"
       confirmations: 12
       chain_params:
         chain_id: 35443
-        native_symbol: "Q "
+        native_symbol: "Q"
         native_decimals: 18
         rpc: "http://rpc-proxy/integrations/rpc-proxy/q_testnet"
         explorer_url: "https://explorer.qtestnet.org/"
@@ -134,6 +146,7 @@ data:
       name: "Avalanche Mainnet"
       icon: "https://raw.githubusercontent.com/Swapica/assets/master/chains/avalanche/avalanche.png"
       swap_contract: "0x0Ac28BcDcef8D8C95c4a079418dbC34e4AD4DF1D"
+      relayer_contract: "0xa651EdBbF77e1A2678DEfaE08A33c5004b491457"
       rpc_endpoint: "http://rpc-proxy/integrations/rpc-proxy/avalanche"
       type: "evm"
       confirmations: 12
@@ -146,7 +159,6 @@ data:
         chain_hex_id: "0xa86a"
         chain_type: "mainnet"
         public_rpc: "https://api.avax.network/ext/bc/C/rpc"
-
 
 signer:
   eth_signer: "private key of address from getSigners contract method"

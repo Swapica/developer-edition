@@ -11,6 +11,8 @@ network:
   contract: "0x37987Dc60534e1bAfd463ac49b88812ABEb17718"
   chain_id: 35443
   index_period: 30s
+  use_websocket: false
+  ws: "" # required to subscribe to blocks
   # on troubles see more fields in indexer-fuji.yaml
   override_last_block: "5975165"
   request_timeout: 7s
